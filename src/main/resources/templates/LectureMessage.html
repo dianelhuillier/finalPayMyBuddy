@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymeleaf.org">
+<head>
+<meta charset = "UTF-8">
+<title>Lecture</title>
+</head>
+<body>
+<th:block th:replace="fragment/barre.html::barre"></th:block>
+
+<th:block th:replace="fragment/menu.html::menu"></th:block>
+<br>
+
+<h1>Lecture des messages</h1>
+
+Auteur : <span th:text = "${msg.author}"></span> </br>
+Objet : <span th:text = "${msg.subject}"></span> </br>
+Heure : <span th:text = "${msg.timeStamp}"></span> </br>
+Message : <span th:text = "${msg.textMsg}"></span> </br>
+<a th:href="@{/listmsg}">Retour à la liste des messages</a>
+</body>
+</html>

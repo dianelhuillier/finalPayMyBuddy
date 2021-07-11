@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th= "http://www.thymeleaf.org">
+<head>
+<link th:href="@{assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{assets/dist/css/stylep.css}" rel="stylesheet">
+<meta charset = "UTF-8" >
+<title>ListMessages</title>
+</head>
+<body>
+<th:block th:replace="fragment/menu.html::menu"></th:block>
+<br>
+
+<h1>Liste des Messages Recus</h1>
+<table border ="1">
+<tr>
+<td>Numero</td>
+<td>Auteur</td>
+<td>Objet</td>
+<td>Heure</td>
+<td>Action</td>
+</tr>
+
+<tr th:each="msg : ${msgList}">
+<td th:text = "${msg.id}">1</td>
+<td th:text = "${msg.author}">Diane</td>
+<td th:text = "${msg.subject}">Coucou</td>
+<td th:text = "${msg.timeStamp}">12:53</td>
+<td><a th:href="@{'/detail?id='+ ${msg.id}}"
+>Details</a>||
+<a th:href="@{'/delete?id='+ ${msg.id}}"
+>Supprimer</a>
+</td>
+</tr>
+
+</table>
+</body>
+</html>

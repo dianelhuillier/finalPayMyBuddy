@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Thymeleaf Namespace -->
+ 
+<html lang = "en" xmlns:th= "http://www.thymeleaf.org">
+<head>
+<link th:href="@{assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{assets/dist/css/stylep.css}" rel="stylesheet">
+
+<meta charset = "UTF-8">
+<title>Envoyer un Message</title>
+</head>
+<body>
+
+<th:block th:replace="fragment/menu.html::menu"></th:block>
+<br>
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/index">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Contact</li>
+  </ol>
+</nav>
+
+<h1>Envoyer un message</h1>
+
+<form action="#" th:action="@{/addmsg}" th:object="${newMessage}" method="post">
+<p>Auteur :</p>
+<input type="text" th:field="*{author}">
+<p>Objet :</p>
+<input type="text" th:field="*{subject}">
+<p>Message  :</p>
+<textarea th:field="*{textMsg}" >
+</textarea>
+<input type="submit" value="Envoyer">
+
+</form>
+
+</body>
+</html>

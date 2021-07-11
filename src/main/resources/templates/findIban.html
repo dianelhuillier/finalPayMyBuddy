@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<link th:href="@{assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{assets/dist/css/stylep.css}" rel="stylesheet">
+
+<meta charset = "UTF-8">
+<title>List Accounts</title>
+</head>
+<body>
+<!-- <th:block th:replace="fragment/barre.html::barre"></th:block> -->
+<th:block th:replace="fragment/menu.html::menu"></th:block>
+<br>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb" >
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+<h1 style="text-align: center;">List Accounts</h1>
+
+
+	<form  method="POST" class="form-signin"
+			style="width: 30%; margin: auto" th:action="@{/registreiban}" th:modelAttribute="newAcccount">
+
+		<input type="text" id="iban" name="iban" th:placeholder="NewAccount"
+		class="form-control" />
+<input type="submit" value="Envoyer">
+  
+</form>
+
+
+
+<!--   <select class="form-control " th:field="*{receiver.id}"> -->
+<!--                     <option th:each="contact : ${contacts}" -->
+<!--                             th:value="${contact.id}" -->
+<!--                             th:text="${contact.email}"></option> -->
+
+
+
+
+<div class="payselect">
+			<form th:action="@{/accounts/details}" method="POST"
+				th:object="${account}" >
+
+
+				<select aria-label="Default select example" id="listAccounts"
+					name="listAccounts">
+					
+					<option th:each="account : ${listAccount}" th:value="${account.iban}" th:text="${account.iban}"
+						>One</option>
+				</select> 
+				
+				
+				<input type="text" name="description" id="description"> 
+				
+				
+				<input type="number" name="amount" min="1" max="900000000000"
+					id="buttonamount">
+
+
+				<button name="sendBankMoney" value="approve" id="paybutton">Send></button>
+				<button name="getBankMoney" value="approve" id="paybutton">Get	></button>
+
+
+			</form>
+		</div>
+
+<table class="myConnections">
+	<caption>My Accounts</caption>
+	<thead>
+		<tr>
+			<th>IBAN</th>
+			<th>Sold</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr th:each="account : ${accounts}">
+	
+	<td class="tablesize" th:text="${soldAccount}">Sold</td>
+	
+	
+<!-- 	<td th:text = "${account.soldAccount}">Sold</td> -->
+	<td class="tablesize"  th:value="${account.sold}" th:text="${account.sold}">Sold</td>
+	</tr>
+
+
+
+	</tbody>
+</table>
+
+</body>
+<footer>
+<p th:text="${#dates.createNow()}"></p>
+</footer>
+</html>

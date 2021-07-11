@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<link th:href="@{assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{assets/dist/css/stylep.css}" rel="stylesheet">
+
+<meta charset = "UTF-8">
+<title>Find Connection</title>
+</head>
+<body>
+<!-- <th:block th:replace="fragment/barre.html::barre"></th:block> -->
+<th:block th:replace="fragment/menu.html::menu"></th:block>
+<br>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb" >
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+<h1 style="text-align: center;">Find Connection</h1>
+
+
+<form th:action="@{/findConnection}" th:modelAttribute="newConnection" method="POST" >
+  <div id="connectionSearch">
+    <input type="text" id="email" name="email" th:placeholder="Email">
+    <button>Ajouter</button>
+  </div>
+</form>
+
+
+
+
+<table class="myConnections">
+	<caption>My Connections</caption>
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr th:each="ppl : ${listConnectedPeople}">
+	<td th:text = "${ppl.firstName} + ' ' + ${ppl.lastName}"  ></td>
+	<td th:text = "${ppl.email}"></td>
+	</tr>
+
+	</tbody>
+</table>
+
+</body>
+</html>

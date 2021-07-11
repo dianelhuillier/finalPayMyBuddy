@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_5qvHANT3EeuEfbv7pmrWQg">
+  <modelElement href="payMyBuddy.uml#_6h7NsNT3EeuEfbv7pmrWQg"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_66MjwNT3EeuEfbv7pmrWQg" sourceAnchor="108.0,0.0" targetAnchor="0.0,100.0" target="_66SqYNT3EeuEfbv7pmrWQg" source="_66SqYNT3EeuEfbv7pmrWQg">
+    <modelElement href="payMyBuddy.uml#_6tDfoNT3EeuEfbv7pmrWQg"/>
+    <bendpoints xmi:id="_73kK8NT3EeuEfbv7pmrWQg" sourceY="-121" targetX="108" targetY="-221"/>
+    <bendpoints xmi:id="_73kK8dT3EeuEfbv7pmrWQg" sourceX="-247" sourceY="-121" targetX="-139" targetY="-221"/>
+    <bendpoints xmi:id="_73kK8tT3EeuEfbv7pmrWQg" sourceX="-247" sourceY="100" targetX="-139"/>
+    <stereotypes xmi:id="_66PnENT3EeuEfbv7pmrWQg" name="Reference">
+      <modelElement href="payMyBuddy.uml#_6tLbcNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_66PAANT3EeuEfbv7pmrWQg" text="">
+      <visualProperties xmi:id="_73kyANT3EeuEfbv7pmrWQg" position="185.00000000000003,-11.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_66PAAdT3EeuEfbv7pmrWQg" aggregationKind="NONE" name="">
+      <modelElement href="payMyBuddy.uml#_6tDfodT3EeuEfbv7pmrWQg"/>
+      <visualProperties xmi:id="_73kK89T3EeuEfbv7pmrWQg" position="-21.0,-60.0"/>
+      <visibility xmi:id="_66QOINT3EeuEfbv7pmrWQg" label="+"/>
+      <cardinality xmi:id="_66PnEdT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_66PAAtT3EeuEfbv7pmrWQg" aggregationKind="NONE" name="transactions" navigable="true">
+      <modelElement href="payMyBuddy.uml#_6sVG4NT3EeuEfbv7pmrWQg"/>
+      <visualProperties xmi:id="_73lZENT3EeuEfbv7pmrWQg" position="-100.5,11.5"/>
+      <visibility xmi:id="_66QOItT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66QOIdT3EeuEfbv7pmrWQg" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_66llUNT3EeuEfbv7pmrWQg" sourceAnchor="177.0,0.0" targetAnchor="78.0,108.0" target="_66F2ENT3EeuEfbv7pmrWQg" source="_66vWUNT3EeuEfbv7pmrWQg">
+    <modelElement href="payMyBuddy.uml#_6tMCgNT3EeuEfbv7pmrWQg"/>
+    <stereotypes xmi:id="_66oBktT3EeuEfbv7pmrWQg" name="Reference">
+      <modelElement href="payMyBuddy.uml#_6tUlYNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_66nagNT3EeuEfbv7pmrWQg" text="">
+      <visualProperties xmi:id="_73mAIdT3EeuEfbv7pmrWQg" position="-14.792734653421832,3.6329837935406033"/>
+    </nameVisual>
+    <sourceRole xmi:id="_66oBkNT3EeuEfbv7pmrWQg" aggregationKind="NONE" name="">
+      <modelElement href="payMyBuddy.uml#_6tMCgdT3EeuEfbv7pmrWQg"/>
+      <visualProperties xmi:id="_73mAINT3EeuEfbv7pmrWQg" position="2.4787240270169946,-73.11191009775425"/>
+      <visibility xmi:id="_66sTAdT3EeuEfbv7pmrWQg" label="+"/>
+      <cardinality xmi:id="_66sTANT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_66oBkdT3EeuEfbv7pmrWQg" aggregationKind="NONE" name="roles" navigable="true">
+      <modelElement href="payMyBuddy.uml#_6siiQNT3EeuEfbv7pmrWQg"/>
+      <visualProperties xmi:id="_73mAItT3EeuEfbv7pmrWQg" position="-13.267106261192069,39.37665744186711"/>
+      <visibility xmi:id="_66sTA9T3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66sTAtT3EeuEfbv7pmrWQg" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_66mzcNT3EeuEfbv7pmrWQg" sourceAnchor="15.0,0.0" targetAnchor="137.0,108.0" target="_66bNQNT3EeuEfbv7pmrWQg" source="_66vWUNT3EeuEfbv7pmrWQg">
+    <modelElement href="payMyBuddy.uml#_6tVMcNT3EeuEfbv7pmrWQg"/>
+    <stereotypes xmi:id="_66ooodT3EeuEfbv7pmrWQg" name="Reference">
+      <modelElement href="payMyBuddy.uml#_6tb6INT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <nameVisual xmi:id="_66oBk9T3EeuEfbv7pmrWQg" text="">
+      <visualProperties xmi:id="_73mnMdT3EeuEfbv7pmrWQg" position="-15.723424604202762,-30.449001592156463"/>
+    </nameVisual>
+    <sourceRole xmi:id="_66oBlNT3EeuEfbv7pmrWQg" aggregationKind="NONE" name="">
+      <modelElement href="payMyBuddy.uml#_6tVMcdT3EeuEfbv7pmrWQg"/>
+      <visualProperties xmi:id="_73mnMNT3EeuEfbv7pmrWQg" position="2.1022559771729874,-72.09643672082444"/>
+      <visibility xmi:id="_66s6EtT3EeuEfbv7pmrWQg" label="+"/>
+      <cardinality xmi:id="_66s6EdT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_66oooNT3EeuEfbv7pmrWQg" aggregationKind="NONE" name="connections" navigable="true">
+      <modelElement href="payMyBuddy.uml#_6sk-g9T3EeuEfbv7pmrWQg"/>
+      <visualProperties xmi:id="_73mnMtT3EeuEfbv7pmrWQg" position="-38.21021163876195,-29.689684767816033"/>
+      <visibility xmi:id="_66s6FNT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66s6E9T3EeuEfbv7pmrWQg" label="1..*" max="-1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_66F2ENT3EeuEfbv7pmrWQg" name="Role" associationsIn="_66llUNT3EeuEfbv7pmrWQg">
+    <modelElement href="payMyBuddy.uml#_6itQ0NT3EeuEfbv7pmrWQg"/>
+    <visualProperties xmi:id="_66F2EdT3EeuEfbv7pmrWQg" position="30.0,30.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_66F2EtT3EeuEfbv7pmrWQg" name="Table">
+      <modelElement href="payMyBuddy.uml#_6i6FINT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <stereotypes xmi:id="_66F2E9T3EeuEfbv7pmrWQg" name="JPA1StyledElement">
+      <modelElement href="payMyBuddy.uml#_6i7TQNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <stereotypes xmi:id="_66F2FNT3EeuEfbv7pmrWQg" name="Annotations">
+      <modelElement href="payMyBuddy.uml#_6i8hYNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <visibility xmi:id="_66F2FdT3EeuEfbv7pmrWQg" label="+"/>
+    <attributes xmi:id="_66F2FtT3EeuEfbv7pmrWQg" name="id">
+      <modelElement href="payMyBuddy.uml#_6sKHwdT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66F2F9T3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sLV4NT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66F2GNT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sL88NT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66F2GdT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66F2GtT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66F2G9T3EeuEfbv7pmrWQg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66F2HNT3EeuEfbv7pmrWQg" name="role">
+      <modelElement href="payMyBuddy.uml#_6sMkANT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66F2HdT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sMkAdT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66F2HtT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sNLENT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66F2H9T3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66F2INT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66F2IdT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_66SqYNT3EeuEfbv7pmrWQg" name="TransactionPayMyBuddy" associationsIn="_66MjwNT3EeuEfbv7pmrWQg" associationsOut="_66MjwNT3EeuEfbv7pmrWQg">
+    <modelElement href="payMyBuddy.uml#_6i9vgNT3EeuEfbv7pmrWQg"/>
+    <visualProperties xmi:id="_66SqYdT3EeuEfbv7pmrWQg" position="-74.0,616.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_66SqYtT3EeuEfbv7pmrWQg" name="JPA1StyledElement">
+      <modelElement href="payMyBuddy.uml#_6i_ksNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <stereotypes xmi:id="_66SqY9T3EeuEfbv7pmrWQg" name="Annotations">
+      <modelElement href="payMyBuddy.uml#_6jBZ4NT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <visibility xmi:id="_66SqZNT3EeuEfbv7pmrWQg" label="+"/>
+    <attributes xmi:id="_66SqZdT3EeuEfbv7pmrWQg" name="id">
+      <modelElement href="payMyBuddy.uml#_6sNyINT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66SqZtT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sOZMNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66SqZ9T3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sPAQNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66SqaNT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66SqadT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66SqatT3EeuEfbv7pmrWQg" name="Long">
+        <modelElement href="payMyBuddy.uml#_6rn8QNT3EeuEfbv7pmrWQg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66Sqa9T3EeuEfbv7pmrWQg" name="emailUser">
+      <modelElement href="payMyBuddy.uml#_6sPnUtT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66SqbNT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sQOYNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66SqbdT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66SqbtT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66Sqb9T3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66SqcNT3EeuEfbv7pmrWQg" name="amount">
+      <modelElement href="payMyBuddy.uml#_6sQOYdT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66SqcdT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sQ1cNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66SqctT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66Sqc9T3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66SqdNT3EeuEfbv7pmrWQg" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66SqddT3EeuEfbv7pmrWQg" name="emailConnection">
+      <modelElement href="payMyBuddy.uml#_6sQ1cdT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66SqdtT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sSDkNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66Sqd9T3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66SqeNT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66SqedT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66SqetT3EeuEfbv7pmrWQg" name="timeStamp">
+      <modelElement href="payMyBuddy.uml#_6sSDkdT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66Sqe9T3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sSqoNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66SqfNT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66SqfdT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66SqftT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66Sqf9T3EeuEfbv7pmrWQg" name="description">
+      <modelElement href="payMyBuddy.uml#_6sSqodT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66SqgNT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sTRsNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66SqgdT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66SqgtT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66Sqg9T3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66SqhNT3EeuEfbv7pmrWQg" name="transactions">
+      <modelElement href="payMyBuddy.uml#_6sVG4NT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66SqhdT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sWVANT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66SqhtT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sW8ENT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66Sqh9T3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66SqiNT3EeuEfbv7pmrWQg" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_66SqidT3EeuEfbv7pmrWQg" name="TransactionPayMyBuddy">
+        <modelElement href="payMyBuddy.uml#_6i9vgNT3EeuEfbv7pmrWQg"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_66bNQNT3EeuEfbv7pmrWQg" name="Connection" associationsIn="_66mzcNT3EeuEfbv7pmrWQg">
+    <modelElement href="payMyBuddy.uml#_6iOvsNT3EeuEfbv7pmrWQg"/>
+    <visualProperties xmi:id="_66bNQdT3EeuEfbv7pmrWQg" position="-191.0,30.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_66bNQtT3EeuEfbv7pmrWQg" name="Table">
+      <modelElement href="payMyBuddy.uml#_6iWrgNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <stereotypes xmi:id="_66bNQ9T3EeuEfbv7pmrWQg" name="JPA1StyledElement">
+      <modelElement href="payMyBuddy.uml#_6iZHwNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <stereotypes xmi:id="_66bNRNT3EeuEfbv7pmrWQg" name="Annotations">
+      <modelElement href="payMyBuddy.uml#_6ieAQNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <visibility xmi:id="_66bNRdT3EeuEfbv7pmrWQg" label="+"/>
+    <attributes xmi:id="_66bNRtT3EeuEfbv7pmrWQg" name="Id">
+      <modelElement href="payMyBuddy.uml#_6r-hkNT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66bNR9T3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sBk4NT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66bNSNT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sCL8NT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66bNSdT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66bNStT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66bNS9T3EeuEfbv7pmrWQg" name="Long">
+        <modelElement href="payMyBuddy.uml#_6rn8QNT3EeuEfbv7pmrWQg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66bNTNT3EeuEfbv7pmrWQg" name="email">
+      <modelElement href="payMyBuddy.uml#_6sDaENT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66bNTdT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sEBINT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66bNTtT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66bNT9T3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66bNUNT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_66gFwNT3EeuEfbv7pmrWQg" name="MessageModel">
+    <modelElement href="payMyBuddy.uml#_6igcgNT3EeuEfbv7pmrWQg"/>
+    <visualProperties xmi:id="_66gFwdT3EeuEfbv7pmrWQg" position="-329.0,301.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_66gFwtT3EeuEfbv7pmrWQg" name="JPA1StyledElement">
+      <modelElement href="payMyBuddy.uml#_6iiRsNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <stereotypes xmi:id="_66gFw9T3EeuEfbv7pmrWQg" name="Annotations">
+      <modelElement href="payMyBuddy.uml#_6inxQNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <visibility xmi:id="_66gFxNT3EeuEfbv7pmrWQg" label="+"/>
+    <attributes xmi:id="_66gFxdT3EeuEfbv7pmrWQg" name="id">
+      <modelElement href="payMyBuddy.uml#_6sEoMNT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66gFxtT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sFPQNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66gFx9T3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sFPQdT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66gFyNT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66gFydT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66gFytT3EeuEfbv7pmrWQg" name="Long">
+        <modelElement href="payMyBuddy.uml#_6rn8QNT3EeuEfbv7pmrWQg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66gFy9T3EeuEfbv7pmrWQg" name="author">
+      <modelElement href="payMyBuddy.uml#_6sF2U9T3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66gFzNT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sGdYNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66gFzdT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66gFztT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66gFz9T3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66gF0NT3EeuEfbv7pmrWQg" name="subject">
+      <modelElement href="payMyBuddy.uml#_6sGdYdT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66gF0dT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sISkNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66gF0tT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66gF09T3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66gF1NT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66gF1dT3EeuEfbv7pmrWQg" name="timeStamp">
+      <modelElement href="payMyBuddy.uml#_6sISkdT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66gF1tT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sI5oNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66gF19T3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66gF2NT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66gF2dT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66gF2tT3EeuEfbv7pmrWQg" name="textMsg">
+      <modelElement href="payMyBuddy.uml#_6sJgsNT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66gF29T3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sKHwNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66gF3NT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66gF3dT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66gF3tT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_66vWUNT3EeuEfbv7pmrWQg" name="User" associationsOut="_66llUNT3EeuEfbv7pmrWQg _66mzcNT3EeuEfbv7pmrWQg">
+    <modelElement href="payMyBuddy.uml#_6jFrUNT3EeuEfbv7pmrWQg"/>
+    <visualProperties xmi:id="_66vWUdT3EeuEfbv7pmrWQg" position="-69.0,193.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_66vWUtT3EeuEfbv7pmrWQg" name="Table">
+      <modelElement href="payMyBuddy.uml#_6jRRgNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <stereotypes xmi:id="_66vWU9T3EeuEfbv7pmrWQg" name="JPA1StyledElement">
+      <modelElement href="payMyBuddy.uml#_6jSfoNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <stereotypes xmi:id="_66vWVNT3EeuEfbv7pmrWQg" name="Annotations">
+      <modelElement href="payMyBuddy.uml#_6jZ0YNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <visibility xmi:id="_66vWVdT3EeuEfbv7pmrWQg" label="+"/>
+    <attributes xmi:id="_66vWVtT3EeuEfbv7pmrWQg" name="id">
+      <modelElement href="payMyBuddy.uml#_6sYKMNT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66vWV9T3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sZYUNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66vWWNT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sZYUdT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66vWWdT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66vWWtT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66v9YNT3EeuEfbv7pmrWQg" name="Long">
+        <modelElement href="payMyBuddy.uml#_6rn8QNT3EeuEfbv7pmrWQg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66v9YdT3EeuEfbv7pmrWQg" name="firstName">
+      <modelElement href="payMyBuddy.uml#_6sZ_Y9T3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66v9YtT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6samcNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66v9Y9T3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sbNgNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66v9ZNT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66v9ZdT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66v9ZtT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66v9Z9T3EeuEfbv7pmrWQg" name="lastName">
+      <modelElement href="payMyBuddy.uml#_6sbNg9T3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66v9aNT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6scboNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66v9adT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6scbodT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66v9atT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66v9a9T3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66v9bNT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66v9bdT3EeuEfbv7pmrWQg" name="email">
+      <modelElement href="payMyBuddy.uml#_6sdCsNT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66v9btT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sdpwNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66v9b9T3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6seQ0NT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66v9cNT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66v9cdT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66v9ctT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66v9c9T3EeuEfbv7pmrWQg" name="password">
+      <modelElement href="payMyBuddy.uml#_6se34NT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66v9dNT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sfe8NT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66v9ddT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sgGANT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66v9dtT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66v9d9T3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66v9eNT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66v9edT3EeuEfbv7pmrWQg" name="active">
+      <modelElement href="payMyBuddy.uml#_6sgGA9T3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66v9etT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sgtENT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66v9e9T3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6shUINT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66v9fNT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66v9fdT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66v9ftT3EeuEfbv7pmrWQg" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66v9f9T3EeuEfbv7pmrWQg" name="sold">
+      <modelElement href="payMyBuddy.uml#_6shUI9T3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66v9gNT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sh7MNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66v9gdT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66v9gtT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_66v9g9T3EeuEfbv7pmrWQg" name="double">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66v9hNT3EeuEfbv7pmrWQg" name="roles">
+      <modelElement href="payMyBuddy.uml#_6siiQNT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66v9hdT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sjJUNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66v9htT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sjJUdT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66v9h9T3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66v9iNT3EeuEfbv7pmrWQg" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_66v9idT3EeuEfbv7pmrWQg" name="Role">
+        <modelElement href="payMyBuddy.uml#_6itQ0NT3EeuEfbv7pmrWQg"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_66v9itT3EeuEfbv7pmrWQg" name="connections">
+      <modelElement href="payMyBuddy.uml#_6sk-g9T3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_66v9i9T3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+        <modelElement href="payMyBuddy.uml#_6sllkdT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <stereotypes xmi:id="_66v9jNT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6smMoNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66v9jdT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_66v9jtT3EeuEfbv7pmrWQg" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_66v9j9T3EeuEfbv7pmrWQg" name="Connection">
+        <modelElement href="payMyBuddy.uml#_6iOvsNT3EeuEfbv7pmrWQg"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_66v9kNT3EeuEfbv7pmrWQg" name="User">
+      <modelElement href="payMyBuddy.uml#_6jWKANT3EeuEfbv7pmrWQg"/>
+      <keywords xmi:id="_66v9kdT3EeuEfbv7pmrWQg" keyword="create"/>
+      <stereotypes xmi:id="_66v9ktT3EeuEfbv7pmrWQg" name="StyledElement">
+        <modelElement href="payMyBuddy.uml#_6jYmQNT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_66v9k9T3EeuEfbv7pmrWQg" label="+"/>
+      <cardinality xmi:id="_66v9lNT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_66v9ldT3EeuEfbv7pmrWQg">
+        <modelElement href="payMyBuddy.uml#_6jX_MNT3EeuEfbv7pmrWQg"/>
+        <type xmi:id="_66v9ltT3EeuEfbv7pmrWQg" name="User">
+          <modelElement href="payMyBuddy.uml#_6jFrUNT3EeuEfbv7pmrWQg"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_66v9l9T3EeuEfbv7pmrWQg" name="email">
+        <modelElement href="payMyBuddy.uml#_6jWKAdT3EeuEfbv7pmrWQg"/>
+        <cardinality xmi:id="_66v9mNT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+        <type xmi:id="_66v9mdT3EeuEfbv7pmrWQg" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_66v9mtT3EeuEfbv7pmrWQg" name="password">
+        <modelElement href="payMyBuddy.uml#_6jWxENT3EeuEfbv7pmrWQg"/>
+        <cardinality xmi:id="_66v9m9T3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+        <type xmi:id="_66v9nNT3EeuEfbv7pmrWQg" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_67DfYNT3EeuEfbv7pmrWQg" name="UserDto">
+    <modelElement href="payMyBuddy.uml#_6jhJINT3EeuEfbv7pmrWQg"/>
+    <visualProperties xmi:id="_67DfYdT3EeuEfbv7pmrWQg" position="351.0,315.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_67DfYtT3EeuEfbv7pmrWQg" name="LegacyStyledElement">
+      <modelElement href="payMyBuddy.uml#_6jiXQNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <stereotypes xmi:id="_67DfY9T3EeuEfbv7pmrWQg" name="Annotations">
+      <modelElement href="payMyBuddy.uml#_6jjlYNT3EeuEfbv7pmrWQg"/>
+    </stereotypes>
+    <visibility xmi:id="_67DfZNT3EeuEfbv7pmrWQg" label="+"/>
+    <attributes xmi:id="_67DfZdT3EeuEfbv7pmrWQg" name="firstName">
+      <modelElement href="payMyBuddy.uml#_6soB0NT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_67DfZtT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6soo4NT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_67DfZ9T3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_67DfaNT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_67DfadT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_67DfatT3EeuEfbv7pmrWQg" name="lastName">
+      <modelElement href="payMyBuddy.uml#_6spP8NT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_67Dfa9T3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sp3ANT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_67DfbNT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_67DfbdT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_67DfbtT3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_67Dfb9T3EeuEfbv7pmrWQg" name="email">
+      <modelElement href="payMyBuddy.uml#_6sp3AtT3EeuEfbv7pmrWQg"/>
+      <stereotypes xmi:id="_67DfcNT3EeuEfbv7pmrWQg" name="Annotations">
+        <modelElement href="payMyBuddy.uml#_6sqeENT3EeuEfbv7pmrWQg"/>
+      </stereotypes>
+      <visibility xmi:id="_67DfcdT3EeuEfbv7pmrWQg" label="-"/>
+      <cardinality xmi:id="_67DfctT3EeuEfbv7pmrWQg" label="1" max="1" min="1"/>
+      <type xmi:id="_67Dfc9T3EeuEfbv7pmrWQg" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_67Hw0NT3EeuEfbv7pmrWQg" name="MyRequestDto">
+    <modelElement href="payMyBuddy.uml#_6jf7ANT3EeuEfbv7pmrWQg"/>
+    <visualProperties xmi:id="_67Hw0dT3EeuEfbv7pmrWQg" position="616.0,414.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_67Hw0tT3EeuEfbv7pmrWQg" label="+"/>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

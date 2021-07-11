@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<body>
+<nav th:fragment="menu">
+<a href="/index">
+  <img alt="logo" th:src="@{/image/paymybuddy.png}" style="width: 170px; float: left;">
+</a>
+
+<ul class="nav justify-content-end">
+
+  <li class="nav-item">
+  
+    <a class="nav-link active" aria-current="page" href="/index">Home</a>
+<!-- <a th:href="@{/}">Home</a> -->
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/transfer">Transfer</a>
+<!-- <a th:href="@{/transfer}">Transfer</a> -->
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/registreiban">Add Bank</a>
+<!-- <a th:href="@{/profile}">Profile</a> -->
+  </li>
+      <li class="nav-item">
+<a class="nav-link" href="/addmsg">Contact</a>  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="/logout" tabindex="-1" >Logout</a>
+<!--   <a th:href="@{/addmsg}">Contact</a> -->
+  </li>
+
+</ul>
+
+
+<!-- <table> -->
+<!-- <tr> -->
+<!-- <td><a th:href="@{/addmsg}">Envoyer un message</a> -->
+<!--  </td> -->
+<!--  <td><a th:href="@{/listmsg}">Lire les messages</a> -->
+<!--  </td> -->
+<!-- </tr> -->
+<!-- </table> -->
+</nav>
+</body>
+</html>

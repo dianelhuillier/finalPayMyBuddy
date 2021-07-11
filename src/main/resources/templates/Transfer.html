@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link th:href="@{assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{assets/dist/css/stylep.css}" rel="stylesheet">
+
+<meta charset="UTF-8">
+<title>Profile</title>
+</head>
+<body>
+
+	<th:block th:replace="fragment/menu.html::menu"></th:block>
+	<br>
+
+	<nav style="-bs-breadcrumb-divider: '&amp;gt;';"
+		aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/index">Home</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Transfer</li>
+		</ol>
+	</nav>
+
+	<div class="sendmoney">
+		<p id="textsendmoney">Send Money</p>
+		<!-- th:object="${requestConnection}"   -->
+		<form th:action="@{/findConnection}" method="GET" action="">
+			<button name="addConnection" value="approve" id="buttonaddconnection">Add
+				Connection></button>
+			<!-- <input type="button"  onclick="location.href='/register.htm'" value="Register" > -->
+		</form>
+	</div>
+
+	<div class="transfer">
+		<div class="payselect">
+		
+			<form th:action="@{/transfer}" method="POST"
+				th:object="${newTransactionPayMyBuddy}" action="">
+
+
+				<select aria-label="Default select example" id="selectaconnection"
+					name="emailConnection">
+					
+					<option th:value="${ppl.email}" th:text="${ppl.email}" 
+						th:each="ppl : ${listConnectedPeople}">One</option>
+				</select> 
+				
+				
+				<input type="text" name="description" id="description"> 
+				
+				
+				<input type="number" name="amount" min="1" max="900000000000"
+					id="buttonamount">
+
+
+				<button name="payMoney" value="approve" id="paybutton">Pay></button>
+
+
+			</form>
+		</div>
+
+		<p th:text="${messageError}"></p>
+
+		<br>
+
+		<table class="transactiontable">
+			<caption id="captiontable">My Transactions</caption>
+			<thead>
+				<tr id="tablescope">
+					<th scope="col" class="tablesize">Connections</th>
+					<th scope="col" class="tablesize">Description</th>
+					<th scope="col" class="tablesize">Amount</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="trct : ${listAllTransactions}">
+					<td class="tablesize" th:text="${trct.emailConnection}" >Mark</td>
+					<td class="tablesize" th:text="${trct.description}" >Otto</td>
+					<td class="tablesize" th:text="${trct.amount}">@mdo</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<div class="panel-body" style="display: inline-block;">
+			<ul class="nav nav-pills">
+				<li th:class="${currentPage==status.index}?'active':''"
+					th:each="page,status:${nombrePages}"><a
+					th:href="@{/transfer(page=${status.index})}"
+					th:text="${status.index+1}"></a>
+					 <a class="page-link" href="#" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		        <span class="sr-only"></span>
+		      </a>
+					</li>
+			</ul>
+		</div>
+
+
+		<!-- <nav aria-label="paginationnav"> -->
+		<!--   <ul class="pagination"> -->
+		<!--     <li class="page-item"> -->
+		<!--       <a class="page-link" href="#" aria-label="Previous"> -->
+		<!--         <span aria-hidden="true">&laquo;</span> -->
+		<!--         <span class="sr-only"></span> -->
+		<!--       </a> -->
+		<!--     </li> -->
+
+
+
+
+
+		<!--     <li class="page-item" th:classappend="${i eq currentPage+1} ? 'active'" -->
+		<!--                         th:each="i : ${#numbers.sequence( 1, totalPages > 5 + currentPage ? currentPage + 5 : totalPages, 1)}"> -->
+		<!--                         <a class="page-link" th:href="@{transaction?page={id}(id=${i})}" th:text="${i}" -->
+		<!--                            th:title="${'Page '+ i}" -->
+		<!--                            rel="tooltip"> -->
+		<!--                         </a> -->
+		<!--                     </li> -->
+
+
+
+		<!--     <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+		<!--     <li class="page-item"><a class="page-link" href="#">2</a></li> -->
+		<!--     <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+		<!--     <li class="page-item"> -->
+		<!--       <a class="page-link" href="#" aria-label="Next"> -->
+		<!--         <span aria-hidden="true">&raquo;</span> -->
+		<!--         <span class="sr-only"></span> -->
+		<!--       </a> -->
+		<!--     </li> -->
+		<!--   </ul> -->
+		<!-- </nav>     th:if="${responseEntity.page['totalPages'] > 1}" -->
+
+
+		<!--     <div class="row"> -->
+		<!--         <div > -->
+		<!--             <div> -->
+		<!--             </div> -->
+		<!--             <div> -->
+		<!--                 <span th:each="i: ${#numbers.sequence(1, responseEntity.page['totalPages'])}"> -->
+		<!--                     <a th:href="@{'/transfer/paginated/' + ${i} + '/10'}" -->
+		<!--                        th:if="${responseEntity.page['currentPage'] != i}">[[${i}]]</a> -->
+		<!--                     <span th:unless="${responseEntity.page['currentPage'] != i}">[[${i}]]</span> -->
+		<!--                 </span> -->
+		<!--             </div> -->
+		<!--             <div> -->
+		<!--                 <a th:href="@{'/transfer/paginated/' + ${responseEntity.page['currentPage'] + 1} + '/10'}" -->
+		<!--                    th:if="${responseEntity.page['currentPage'] < responseEntity.page['totalPages']}"> -->
+		<!--                     Next -->
+		<!--                 </a> -->
+		<!--                 <span th:unless="${responseEntity.page['currentPage'] < responseEntity.page['totalPages']}">Next</span> -->
+		<!--             </div> -->
+		<!--             <div> -->
+		<!--                 <a th:href="@{'/transfer/paginated/' + ${responseEntity.page['totalPages']} + '/10'}" -->
+		<!--                    th:if="${responseEntity.page['currentPage'] < responseEntity.page['totalPages']}"> -->
+		<!--                     Last -->
+		<!--                 </a> -->
+		<!--                 <span th:unless="${responseEntity.page['currentPage'] < responseEntity.page['totalPages']}">Last</span> -->
+		<!--             </div> -->
+		<!--         </div> -->
+		<!--     </div> -->
+
+
+
+
+	</div>
+
+</body>
+</html>

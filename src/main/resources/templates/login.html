@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Login</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+		<br />
+		<br />
+		<form th:action="@{/login}" method="POST" class="form-signin"
+			style="width: 30%; margin: auto">
+<!-- 			<h3 class="form-signin-heading">LOGIN PAGE</h3> -->
+			<img alt="logo" th:src="@{/image/paymybuddy.png}" style="text-align: center; width: 250px; margin: auto; display: block;">
+			
+
+			<br />
+			<fieldset>
+			<legend>Please Login</legend>
+                <div th:if="${param.error}" class="alert alert-error">    
+                    Invalid Email or password.
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success"> 
+                    You have been logged out.
+                </div>
+				<div align="center" th:if="${param.error}">
+<!-- 					<p style="font-size: 20; color: #FF1C19;">Email or password is -->
+<!-- 						invalid</p> -->
+						
+				</div>
+
+				<input type="text" id="email" name="email" th:placeholder="Email"
+					class="form-control" /> <br /> <input type="password"
+					th:placeholder="Password" id="password" name="password"
+					class="form-control" /> <br />
+
+				<div class="form-check">
+					<input type="checkbox" class="form-check-input" id="checkLogin">
+					<label class="form-check-label" for="checkLogin">Remember
+						me</label>
+				</div>
+			</fieldset>
+
+			<button class="btn btn-lg btn-primary btn-block" name="Submit"
+				value="Login" type="Submit" th:text="Login"></button>
+		
+			</form>		
+		<a th:href="@{/registration}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" style="width: 200px; margin: auto; display: block;">Registration</a>
+
+		
+		
+	</div>
+</body>
+</html>

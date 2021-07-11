@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th= "http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<link th:href="@{assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{assets/dist/css/stylep.css}" rel="stylesheet">
+
+<meta charset = "UTF-8">
+<title>Profile</title>
+</head>
+<body>
+
+<th:block th:replace="fragment/menu.html::menu"></th:block>
+<br>
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb" >
+    <li class="breadcrumb-item"><a href="/index">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Profile</li>
+  </ol>
+</nav>
+
+<h1>Mes informations</h1>
+
+<span th:text="${#authentication.getPrincipal().getUsername()}"></span>
+
+<span th:text="${messageError}">
+</span>
+
+<!-- 	<form  method="POST" class="form-signin" -->
+<!-- 			style="width: 30%; margin: auto" th:action="@{/registreiban}" th:modelAttribute="newAcccount"> -->
+
+<!-- 		<input type="text" id="iban" name="iban" th:placeholder="NewAccount" -->
+<!-- 		class="form-control" /> -->
+<!-- <input type="submit" value="Envoyer"> -->
+
+
+
+<!-- 		<table class="banktransactiontable"> -->
+<!-- 			<caption id="captiontable">My Transactions</caption> -->
+<!-- 			<thead> -->
+<!-- 				<tr id="tablescope"> -->
+<!-- 					<th scope="col" class="tablesize">IBAN</th> -->
+<!-- 					<th scope="col" class="tablesize">Amount</th> -->
+<!-- 				</tr> -->
+<!-- 			</thead> -->
+<!-- 			<tbody> -->
+<!-- 				<tr th:each="btrct : ${listAllTransactions}"> -->
+<!-- 					<td class="tablesize" th:text="${btrct.newAccount}">IBAN</td> -->
+<!-- 					<td class="tablesize" th:text="${btrct.newSold}">AMOUNT</td> -->
+<!-- 				</tr> -->
+<!-- 			</tbody> -->
+<!-- 		</table> -->
+<!-- <span th:text="${#authentication.getPrincipal().getAccount()}"></span> -->
+
+</form>
+</body>
+</html>

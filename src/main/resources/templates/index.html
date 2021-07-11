@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+<link th:href="@{assets/dist/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{assets/dist/css/stylep.css}" rel="stylesheet">
+
+<meta charset = "UTF-8">
+<title>Home</title>
+</head>
+<body>
+<!-- <th:block th:replace="fragment/barre.html::barre"></th:block> -->
+<th:block th:replace="fragment/menu.html::menu"></th:block>
+<br>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb" >
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
+</nav>
+<h1 style="text-align: center; font-family: none;">HOME</h1>
+
+<div >
+<a th:href="@{/transfer}"><img class = "homelogo" alt="sendMoney" th:src="@{/image/moneyTransfer.jpg}" ></a>
+<a th:href="@{/profile}"><img class = "homelogo" alt="profile" th:src="@{/image/profile.jpg}" ></a>
+<a th:href="@{/findConnection}"><img class = "homelogo" alt="addContact" th:src="@{/image/addContact.png}" ></a>
+
+
+</div>
+</body>
+</html>
