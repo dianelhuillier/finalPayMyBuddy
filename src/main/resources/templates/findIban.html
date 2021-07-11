@@ -37,20 +37,26 @@
 
 
 
+		<p th:text="${messageError}"></p>
+		
 
+
+
+		
 <div class="payselect">
 
-		<p th:text="${messageError}"></p>
 
 
-			<form th:action="@{/bankTransfer}" method="POST"
+
+			<form th:action="@{/registreiban}" method="POST"
 				th:object="${account}" >
 
 
-				<select aria-label="Default select example" id="listAccounts"
-					name="listAccounts">
+				<select aria-label="Default select" id="selectaniban"
+					name="iban">
 					
-					<option th:each="account : ${listAccount}" th:value="${account.iban}" th:text="${account.iban}"
+					<option th:each="account : ${listAccount}" th:value="${account.iban}" th:text="${account.iban}" 
+						
 						>One</option>
 				</select> 
 				
@@ -68,6 +74,14 @@
 			</form>
 		</div>
 
+
+
+
+
+
+
+
+
 <table class="myConnections">
 	<caption>My Accounts</caption>
 	<thead>
@@ -77,13 +91,9 @@
 		</tr>
 	</thead>
 	<tbody>
-	<tr th:each="account : ${listOfAccounts}">
-	
-	<td class="tablesize" th:each="account : ${account}" th:value="${list}" th:text="${list}">Sold</td>
-	
-	
-<!-- 	<td th:text = "${account.soldAccount}">Sold</td> -->
-	<td class="tablesize"  th:value="${account.sold}" th:text="${account.NewAccount}">Sold</td>
+	<tr th:each="account : ${listAccount}">	
+		<td  th:value="${account.iban}" th:text="${account.iban}">IBAN</td>
+		<td  th:value="${account.soldAccount}" th:text="${account.soldAccount}">Sold</td>
 	</tr>
 
 

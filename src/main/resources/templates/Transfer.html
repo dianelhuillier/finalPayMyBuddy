@@ -31,13 +31,18 @@
 	</div>
 
 	<div class="transfer">
+	
+	
+	
+	
+	
 		<div class="payselect">
 		
 			<form th:action="@{/transfer}" method="POST"
 				th:object="${newTransactionPayMyBuddy}" action="">
 
 
-				<select aria-label="Default select example" id="selectaconnection"
+				<select aria-label="Default select" id="selectaconnection"
 					name="emailConnection">
 					
 					<option th:value="${ppl.email}" th:text="${ppl.email}" 
@@ -58,9 +63,17 @@
 			</form>
 		</div>
 
+
+
+
 		<p th:text="${messageError}"></p>
 
 		<br>
+
+
+
+
+
 
 		<table class="transactiontable">
 			<caption id="captiontable">My Transactions</caption>
@@ -79,6 +92,13 @@
 				</tr>
 			</tbody>
 		</table>
+
+
+
+
+
+
+
 
 
 		<div class="panel-body" style="display: inline-block;">
