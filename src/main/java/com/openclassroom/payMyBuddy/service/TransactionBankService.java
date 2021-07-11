@@ -1,6 +1,7 @@
 package com.openclassroom.payMyBuddy.service;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 
@@ -27,14 +28,21 @@ public class TransactionBankService implements ITransactionBankService{
 	
 	
 	@Transactional 
+	@Override
 	public int sendBankMoney(BankTransaction bankTransaction) {
+		
 		User senderUser = userRepository.findByEmail(bankTransaction.getEmail()); //on créee un user
 		System.out.println("senderUser : " + senderUser);
+		
 		Account bankAccount = accountRepository.findByEmail(bankTransaction.getEmail());
+		
+		
 		double soldBank = bankAccount.getSoldAccount();
 		System.out.println("bankAccount : " + bankAccount);
+		
 		bankTransaction.getAmount();
-		System.out.println("bankamount : " + bankTransaction.getAmount());
+		System.out.println("bankamount : " + bankTransaction.getAmount()); //fonctionne
+		
 		double soldApp = senderUser.getSold();
 		if (soldApp < bankTransaction.getAmount()) {
 		System.out.println("amount too low");
@@ -58,11 +66,19 @@ public class TransactionBankService implements ITransactionBankService{
 	}
 
 	
+	
+	
+	
 	@Transactional 
 	public int getBankMoney(BankTransaction bankTransaction){
 		return 0;
 		
 	}
+	
+	
+	
+	
+	
 	
     public List<BankTransaction> listAll() {
         return transactionBankRepository.findAll();
@@ -72,6 +88,40 @@ public class TransactionBankService implements ITransactionBankService{
 	@Override
 	public List<BankTransaction> findTransactionByEmailUser(String emailUserAuth) {
 		return transactionBankRepository.findAll();
+	}
+
+
+	
+	
+	
+	
+//    public ForeignTransaction createTransaction(ForeignTransaction foreignTransaction) throws Exception {
+//        Account account = accountRepository.findByIban(foreignTransaction.getEmitterIban());
+//        if (account.getSold() >= foreignTransaction.getAmount()) {
+//            account.setSold(account.getSold() - foreignTransaction.getAmount());
+//            accountRepository.save(account);
+//            foreignTransaction.setDate(LocalDate.now());
+//            return foreignTransactionRepository.save(foreignTransaction);
+//        } else {
+//            throw new Exception("Not enough money on account");
+//        }
+//
+//    }
+//	
+//	
+//    public List<Account> listOfAccounts(User user) {
+//        return accountRepository.findByUserId(user.getId());
+//    }
+	
+	
+	@Override
+	public Account connectingAccount(String emailUserAuth, String iban) {
+		User connectUser = userRepository.findByEmail(emailUserAuth);
+		Account newAccount = accountRepository.findByEmail(emailUserAuth);
+		Set<Account> listAccountsRegistred = connectUser.getAccounts();
+		listAccountsRegistred.add(newAccount);
+		connectUser.setAccounts(listAccountsRegistred);
+		return accountRepository.save(newAccount);
 	}
 
 

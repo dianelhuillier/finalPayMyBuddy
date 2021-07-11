@@ -13,6 +13,9 @@ public interface ITransactionBankService {
 
 	List<BankTransaction> findTransactionByEmailUser(String emailUserAuth);
 
+	Account connectingAccount(String emailUserAuth, String iban);
+
+
 
 
 

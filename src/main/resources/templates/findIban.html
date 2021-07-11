@@ -39,7 +39,7 @@
 
 
 <div class="payselect">
-			<form th:action="@{/accounts/details}" method="POST"
+			<form th:action="@{/bankTransfer}" method="POST"
 				th:object="${account}" >
 
 
@@ -74,9 +74,9 @@
 		</tr>
 	</thead>
 	<tbody>
-	<tr th:each="account : ${accounts}">
+	<tr th:each="account : ${listOfAccounts}">
 	
-	<td class="tablesize" th:text="${soldAccount}">Sold</td>
+	<td class="tablesize" th:each="account : ${account}" th:value="${list}" th:text="${list}">Sold</td>
 	
 	
 <!-- 	<td th:text = "${account.soldAccount}">Sold</td> -->

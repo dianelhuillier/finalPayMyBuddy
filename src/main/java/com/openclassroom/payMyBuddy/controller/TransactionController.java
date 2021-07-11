@@ -96,7 +96,7 @@ public class TransactionController {
 		// recuperation de la liste des utilisateurs connectés au l'authentifié
 		Set<Connection> listConnected = userAuth.getConnections();
 		model.addAttribute("listConnectedPeople", listConnected);
-		
+		System.out.println(listConnected); //fonctionne
 		//initialisation des champs du formulaire avec l'object new Transaction
 		TransactionPayMyBuddy transaction = new TransactionPayMyBuddy();
 		model.addAttribute("newTransactionPayMyBuddy", transaction);

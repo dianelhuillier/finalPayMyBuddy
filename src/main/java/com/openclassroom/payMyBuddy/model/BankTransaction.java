@@ -26,8 +26,8 @@ import lombok.NoArgsConstructor;
 public class BankTransaction {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-//	@Column(name = "bankTransaction_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "bankTransaction_id")
 	private Long id;
 	
     @Column(name = "email", nullable = false)
@@ -41,7 +41,7 @@ public class BankTransaction {
     
     private String bank_description;
     
-    @Column(name ="iban", nullable = false, unique = true)
+    @Column(name ="iban", nullable = false, unique = false)
     private String iban;
 
     

@@ -1,9 +1,12 @@
 package com.openclassroom.payMyBuddy.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import javax.validation.constraints.NotNull;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -61,53 +64,74 @@ public class BankTransactionController {
 	public String processIban (@ModelAttribute Account newAccount, Model model) {
 
 			iAccountService.saveAccount(newAccount);
-			Account account = new Account();
 
 			final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 			String emailUserAuth = auth.getName();
 			User userAuth = iUserService.findUserByEmail(emailUserAuth);
-			Set<Account> listAccount = userAuth.getAccounts();
+			
+			
+			System.out.println(emailUserAuth);//fonctionne
+			System.out.println(userAuth); //fonctionne
 
-		model.addAttribute("newAccount", account);
+			iTransactionBankService.connectingAccount(emailUserAuth, newAccount.getIban());
+			Set<Account> listAccount = userAuth.getAccounts();
+			System.out.println(userAuth.getAccounts()); //fonctionne
+			
+List<String>list = listAccount.stream().map(Account::getIban).collect(Collectors.toList());
+				System.out.println(list);//fonctionne
+//				
+//			List<Account> newListAccount = new ArrayList<>();
+//			newListAccount.addAll(listAccount);
+//			System.out.println(newListAccount); //fonctionne
+
 		model.addAttribute("messageError", "Account has been registered successfully");
 		model.addAttribute("listAccount",listAccount);
 		return "findIban";
 	}
 	
-
-	@GetMapping("/bankTransfer")
-	public String showBankTransfer (Model model) {
-
-		//recuperation de l'utilisateur authentifié		
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String emailUserAuth = auth.getName();
-		User userAuth = iUserService.findUserByEmail(emailUserAuth);
-		Set<Account> listAccount = userAuth.getAccounts();
-		System.out.println(userAuth.getAccounts());
-		//initialisation des champs du formulaire avec l'object new Transaction
-		BankTransaction bankTransaction = new BankTransaction();
-		model.addAttribute("newBankTransaction", bankTransaction);
-		
-		//recupération de la liste de toutes les transactions enregistrées par l'utilisateur authentifié
-		List<BankTransaction> listAllBankTransactions = iTransactionBankService.findTransactionByEmailUser(emailUserAuth);
-
-		List<String>listStringIbans = listAllBankTransactions.stream().map(BankTransaction::getIban).collect(Collectors.toList());
-
-		model.addAttribute("listAllBankTransactions", listAccount);
-		model.addAttribute("listStringIbans", listStringIbans);
-
-		model.addAttribute("messageError", messageError);
-	return "transfer";
-}
 	
+	
+	
+	
+	
+
+//	@GetMapping("/bankTransfer")
+//	public String showBankTransfer (Model model) {
+//
+//		//recuperation de l'utilisateur authentifié		
+//		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//		String emailUserAuth = auth.getName();
+//		User userAuth = iUserService.findUserByEmail(emailUserAuth);
+//		
+//		Set<Account> listAccount = userAuth.getAccounts();
+//		model.addAttribute("listAccount", listAccount);
+//		System.out.println(userAuth.getAccounts());
+//		
+//		//initialisation des champs du formulaire avec l'object new Transaction
+//		BankTransaction bankTransaction = new BankTransaction();
+//		model.addAttribute("newBankTransaction", bankTransaction);
+//		
+//		//recupération de la liste de toutes les transactions enregistrées par l'utilisateur authentifié
+//		List<BankTransaction> listAllBankTransactions = iTransactionBankService.findTransactionByEmailUser(emailUserAuth);
+//
+//
+//		model.addAttribute("listAllBankTransactions", listAllBankTransactions);
+//
+//		model.addAttribute("messageError", messageError);
+//	return "findIban";
+//}
+//	
 	
 	@PostMapping("/bankTransfer")
 	public String processBankTranfer(@ModelAttribute BankTransaction newBankTransaction, Model model) {
 
 		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String emailUserAuth = auth.getName();
+		
+
 		newBankTransaction.setEmail(emailUserAuth);
-		System.out.println(newBankTransaction.toString());
+		newBankTransaction.setIban(emailUserAuth);
+	System.out.println(newBankTransaction.toString());
 		
 
 		int echec  = iTransactionBankService.sendBankMoney(newBankTransaction);
@@ -117,13 +141,13 @@ public class BankTransactionController {
 		    
 		} else {
 			messageError = 	"Your Transaction has been completed successfully";
-			return "redirect:transfer";
+			return "redirect:findIban";
 		}	     
 	}
 	
 	
 	
-	@GetMapping(value = "/account/details")
+	@GetMapping(value = "/findIban")
 	public String accountDetails(
 	    @RequestParam(value = "iban") String iban,
 	    @RequestParam(value = "soldAccount") double soldAccount){
