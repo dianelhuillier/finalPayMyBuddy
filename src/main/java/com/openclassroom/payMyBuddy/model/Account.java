@@ -25,13 +25,13 @@ public class Account {
 	@Column(name = "account_id")
 	private Long id;
 	
-    @Column(name = "iban", unique = false) 
+    @Column(name = "iban") 
 	private String iban;
     
     @Column(name = "email")
 	private String email;
     
-    @Column(name = "soldAccount", nullable = true)
+    @Column(name = "soldAccount")
 	private double soldAccount;
 
 

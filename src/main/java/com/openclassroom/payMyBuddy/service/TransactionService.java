@@ -32,7 +32,9 @@ public class TransactionService implements ITransactionService{
 	public User connectingPeople(String emailUser, String emailConnection) {
 		User connectUser = userRepository.findByEmail(emailUser);
 		Connection connectedUser = connectionRepository.findByEmail(emailConnection); //search for connection object with email
+		
 		Set<Connection> listConnectedUsersConnection= connectUser.getConnections(); //
+		
 		listConnectedUsersConnection.add(connectedUser);
 		connectUser.setConnections(listConnectedUsersConnection);
 

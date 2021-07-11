@@ -157,12 +157,7 @@ public class TransactionController {
 		}	     
 	}
 	
-	//TODO : lister les return
-	// les paginations   https://www.baeldung.com/spring-data-jpa-pagination-sorting
-	// prelever 5%     OK 
-	//faire les tests
-	// nettoyer le code
-	//trouver le plugin diagramme de classes      OK
+
 	
 //    @GetMapping(value = "/transfer/paginated/{page}/{page-size}")
 //    public ResponseEntity<List<TransactionPayMyBuddy>> getAllTransactions(

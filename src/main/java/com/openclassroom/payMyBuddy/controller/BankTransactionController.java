@@ -1,5 +1,7 @@
 package com.openclassroom.payMyBuddy.controller;
 
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -95,49 +97,59 @@ List<String>list = listAccount.stream().map(Account::getIban).collect(Collectors
 	
 	
 
-//	@GetMapping("/bankTransfer")
-//	public String showBankTransfer (Model model) {
-//
-//		//recuperation de l'utilisateur authentifié		
-//		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//		String emailUserAuth = auth.getName();
-//		User userAuth = iUserService.findUserByEmail(emailUserAuth);
-//		
-//		Set<Account> listAccount = userAuth.getAccounts();
-//		model.addAttribute("listAccount", listAccount);
-//		System.out.println(userAuth.getAccounts());
-//		
-//		//initialisation des champs du formulaire avec l'object new Transaction
-//		BankTransaction bankTransaction = new BankTransaction();
-//		model.addAttribute("newBankTransaction", bankTransaction);
-//		
-//		//recupération de la liste de toutes les transactions enregistrées par l'utilisateur authentifié
-//		List<BankTransaction> listAllBankTransactions = iTransactionBankService.findTransactionByEmailUser(emailUserAuth);
-//
-//
-//		model.addAttribute("listAllBankTransactions", listAllBankTransactions);
-//
-//		model.addAttribute("messageError", messageError);
-//	return "findIban";
-//}
-//	
+	@GetMapping("/bankTransfer")
+	public String showBankTransfer (Model model) {
+
+		//recuperation de l'utilisateur authentifié		
+		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String emailUserAuth = auth.getName();
+		User userAuth = iUserService.findUserByEmail(emailUserAuth);
+		
+		Set<Account> listAccount = userAuth.getAccounts();
+		model.addAttribute("listAccount", listAccount);
+		System.out.println(userAuth.getAccounts());
+		
+		//initialisation des champs du formulaire avec l'object new Transaction
+		BankTransaction bankTransaction = new BankTransaction();
+		model.addAttribute("newBankTransaction", bankTransaction);
+		
+		//recupération de la liste de toutes les transactions enregistrées par l'utilisateur authentifié
+		List<BankTransaction> listAllBankTransactions = iTransactionBankService.findTransactionByEmailUser(emailUserAuth);
+
+
+		model.addAttribute("listAllBankTransactions", listAllBankTransactions);
+
+		model.addAttribute("messageError", messageError);
+	return "findIban";
+}
+	
 	
 	@PostMapping("/bankTransfer")
 	public String processBankTranfer(@ModelAttribute BankTransaction newBankTransaction, Model model) {
 
 		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String emailUserAuth = auth.getName();
+		Account account = accountRepository.findByEmail(emailUserAuth);
+		
 		
 
+
+
+		String iban = account.getIban();
+		System.out.println("iban : " + iban);
+		
 		newBankTransaction.setEmail(emailUserAuth);
-		newBankTransaction.setIban(emailUserAuth);
+		newBankTransaction.setDate(LocalDate.now());
+		newBankTransaction.setIban(iban);//ICI
 	System.out.println(newBankTransaction.toString());
 		
+	
+
 
 		int echec  = iTransactionBankService.sendBankMoney(newBankTransaction);
 		if (echec == 0) {
 			messageError = "Your account isn't accredit enought";
-		    return "redirect:transfer";
+		    return "redirect:findIban";
 		    
 		} else {
 			messageError = 	"Your Transaction has been completed successfully";
@@ -147,10 +159,11 @@ List<String>list = listAccount.stream().map(Account::getIban).collect(Collectors
 	
 	
 	
+	
+	
+	
 	@GetMapping(value = "/findIban")
-	public String accountDetails(
-	    @RequestParam(value = "iban") String iban,
-	    @RequestParam(value = "soldAccount") double soldAccount){
+	public String accountDetails(){
 	    return "findIban";
 	}
 	

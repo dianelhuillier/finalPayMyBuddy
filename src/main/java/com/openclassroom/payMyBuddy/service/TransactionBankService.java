@@ -118,8 +118,11 @@ public class TransactionBankService implements ITransactionBankService{
 	public Account connectingAccount(String emailUserAuth, String iban) {
 		User connectUser = userRepository.findByEmail(emailUserAuth);
 		Account newAccount = accountRepository.findByEmail(emailUserAuth);
+		
 		Set<Account> listAccountsRegistred = connectUser.getAccounts();
+		
 		listAccountsRegistred.add(newAccount);
+		
 		connectUser.setAccounts(listAccountsRegistred);
 		return accountRepository.save(newAccount);
 	}
