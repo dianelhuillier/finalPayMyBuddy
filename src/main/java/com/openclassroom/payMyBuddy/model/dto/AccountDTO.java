@@ -17,6 +17,9 @@ public class AccountDTO {
     @NotNull
     private String email;
     
-    private double soldDTO;
+    @NotNull
+    private String iban;
+    
+    private double soldAccount;
     
 }

@@ -32,16 +32,13 @@ public class TransactionBankService implements ITransactionBankService{
 	public int sendBankMoney(BankTransaction bankTransaction) {
 
 		User senderUser = userRepository.findByEmail(bankTransaction.getEmail()); //on créee un user
-		System.out.println("senderUser : " + senderUser);
 
 		Account bankAccount = accountRepository.findByEmail(bankTransaction.getEmail());
 
 
 		double soldBank = bankAccount.getSoldAccount();
-		System.out.println("bankAccount : " + bankAccount);
 
 		bankTransaction.getAmount();
-		System.out.println("bankamount : " + bankTransaction.getAmount()); //fonctionne
 
 		double soldApp = senderUser.getSold();
 		if (soldApp < bankTransaction.getAmount()) {
@@ -127,8 +124,8 @@ public class TransactionBankService implements ITransactionBankService{
 		Set<Account> listAccountsRegistred = connectUser.getAccounts();
 
 		listAccountsRegistred.add(newAccount);
-
 		connectUser.setAccounts(listAccountsRegistred);
+		
 		return accountRepository.save(newAccount);
 	}
 

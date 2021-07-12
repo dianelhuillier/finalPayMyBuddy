@@ -37,13 +37,14 @@
 			th:object="${account}">
 
 
-			<select aria-label="Default select" id="selectaniban" name="iban"
-				th:object="${account}">
+			<select aria-label="Default select" id="selectaniban" name="iban">
+<!-- 				th:object="${account}"> -->
 
-				<option th:each="account : ${listAccount}"
-					th:value="${account.iban}" th:text="${account.iban}">One</option>
-			</select> <input type="text" name="bank_description" id="bank_description">
-
+				<option th:value="${account.iban}" th:text="${account.iban}" th:each="account : ${listAccount}"
+					>One</option>
+			</select> 
+			
+			<input type="text" name="bank_description" id="bank_description">
 
 			<input type="number" name="amount" min="-9000000000"
 				max="900000000000" id="buttonamount">
@@ -57,18 +58,17 @@
 
 
 	<table class="myConnections">
-		<caption>My Accounts</caption>
+		<caption id="captiontable">My Accounts</caption>
 		<thead>
-			<tr>
-				<th>IBAN</th>
-				<th>Sold</th>
+			<tr id="tablescope"> 
+				<th scope="col" class="tablesize">IBAN</th>
+				<th scope="col" class="tablesize">Sold</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="account : ${listAccount}">
-				<td th:value="${account.iban}" th:text="${account.iban}">IBAN</td>
-				<td th:value="${account.soldAccount}"
-					th:text="${account.soldAccount}">Sold</td>
+				<td th:text="${account.iban}">IBAN</td>
+				<td th:text="${account.soldAccount}">Sold</td>
 			</tr>
 
 		</tbody>

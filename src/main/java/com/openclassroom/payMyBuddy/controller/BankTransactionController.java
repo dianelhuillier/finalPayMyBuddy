@@ -26,6 +26,7 @@ import com.openclassroom.payMyBuddy.model.BankTransaction;
 import com.openclassroom.payMyBuddy.model.Connection;
 import com.openclassroom.payMyBuddy.model.TransactionPayMyBuddy;
 import com.openclassroom.payMyBuddy.model.User;
+import com.openclassroom.payMyBuddy.model.dto.AccountDTO;
 import com.openclassroom.payMyBuddy.repository.AccountRepository;
 import com.openclassroom.payMyBuddy.service.AccountService;
 import com.openclassroom.payMyBuddy.service.IAccountService;
@@ -54,10 +55,23 @@ public class BankTransactionController {
 
 	@GetMapping("/registreiban")
 	public String showIban (Model model) {
+		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String emailUserAuth = auth.getName();
+		User userAuth = iUserService.findUserByEmail(emailUserAuth);
+		
+		Set<Account> listAccount = userAuth.getAccounts();
+		List<AccountDTO> listAccountDTO = new ArrayList<AccountDTO>();
+		for (Account account : listAccount) {
+			Account accountAdd = iAccountService.findAccountByUserEmail(account.getEmail());
+			AccountDTO accountDTO = new AccountDTO(accountAdd.getIban(), accountAdd.getEmail(), accountAdd.getSoldAccount());
+			System.out.println(accountAdd.getIban());
+			listAccountDTO.add(accountDTO);
+		}
+		
+		model.addAttribute("listAccount", listAccountDTO);
+
 		Account account = new Account();
 		model.addAttribute("newAccount", account);
-		double newSold = account.getSoldAccount();
-		model.addAttribute("newSold", newSold);
 		return "findIban";
 	}
 
@@ -67,20 +81,28 @@ public class BankTransactionController {
 
 		iAccountService.saveAccount(newAccount);
 
-		final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String emailUserAuth = auth.getName();
-		User userAuth = iUserService.findUserByEmail(emailUserAuth);
+		String email = newAccount.getEmail();
+		final Account accountExists = iAccountService.findAccountByUserEmail(email);
 
-		iTransactionBankService.connectingAccount(emailUserAuth, newAccount.getIban());
-		Set<Account> listAccount = userAuth.getAccounts();
+		if (accountExists == null) {
+			model.addAttribute("messageError", "The user isn't existing");
+			return "findConnection";
+		} else {
 
-		List<String>list = listAccount.stream().map(Account::getIban).collect(Collectors.toList());
+			final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			String emailUserAuth = auth.getName();
+			User userAuth = iUserService.findUserByEmail(emailUserAuth);
 
-		model.addAttribute("messageError", "Account has been registered successfully");
-		model.addAttribute("listAccount",listAccount);
-		return "findIban";
+			iTransactionBankService.connectingAccount(emailUserAuth, newAccount.getIban());
+			Set<Account> listAccount = userAuth.getAccounts();
+
+			//	List<String>list = listAccount.stream().map(Account::getIban).collect(Collectors.toList());
+
+			model.addAttribute("messageError", "Account has been registered successfully");
+			model.addAttribute("listAccount",listAccount);
+			return "findIban";
+		}
 	}
-
 
 	@GetMapping("/bankTransfer")
 	public String showBankTransfer (Model model) {
@@ -114,7 +136,7 @@ public class BankTransactionController {
 
 		newBankTransaction.setEmail(emailUserAuth);
 		newBankTransaction.setDate(LocalDate.now());
-		newBankTransaction.setIban(iban);//ICI
+		newBankTransaction.setIban(iban);
 
 		int echec  = iTransactionBankService.sendBankMoney(newBankTransaction);
 		if (echec == 0) {
@@ -132,6 +154,8 @@ public class BankTransactionController {
 	public String accountDetails(){
 		return "findIban";
 	}
+
+	
 
 }
 

@@ -16,4 +16,7 @@ public interface IAccountService {
 	
 	List<Account> findAll();
 
+	Account findAccountByUserEmail(String email);
+
+
 }
