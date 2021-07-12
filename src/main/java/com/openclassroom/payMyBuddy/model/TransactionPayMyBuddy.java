@@ -27,20 +27,20 @@ public class TransactionPayMyBuddy {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-    @Column(name = "email_user", nullable = false)
+	@Column(name = "email_user", nullable = false)
 	private String emailUser;
-    @Column(name = "amount", nullable = false)
+	@Column(name = "amount", nullable = false)
 	private double amount;
-	
-    @Column(name = "email_connection", nullable = false)
+
+	@Column(name = "email_connection", nullable = false)
 	private String emailConnection;
 
 	private String timeStamp;
-	
+
 	private String description;
-	
-			
+
+
 	@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "user_transaction", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "transaction_id"))
-    private Set<TransactionPayMyBuddy> transactions;
+	@JoinTable(name = "user_transaction", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "transaction_id"))
+	private Set<TransactionPayMyBuddy> transactions;
 }

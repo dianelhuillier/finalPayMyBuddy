@@ -14,7 +14,5 @@ public interface TransactionPayMyBuddyRepository extends JpaRepository<Transacti
 	
 	Page<TransactionPayMyBuddy> findByEmailUser(String emailUser, Pageable pageable);
 
-//	@Override
-//	Page<TransactionPayMyBuddy> findAll(Pageable pageable);
 
 }

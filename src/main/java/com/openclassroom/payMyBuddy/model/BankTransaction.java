@@ -29,25 +29,25 @@ public class BankTransaction {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "bankTransaction_id")
 	private Long id;
-	
-    @Column(name = "email", nullable = false)
+
+	@Column(name = "email", nullable = false)
 	private String email;
-    
-    @Column(name = "amount", nullable = false)
+
+	@Column(name = "amount", nullable = false)
 	private double amount;
 
-    @Column(name= "date")
-    private LocalDate date;
-    
-    private String bank_description;
-    
-    @Column(name ="iban", nullable = false, unique = false)
-    private String iban;
+	@Column(name= "date")
+	private LocalDate date;
 
-    
+	private String bank_description;
+
+	@Column(name ="iban", nullable = false, unique = true)
+	private String iban;
+
+
 	@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "user_bankTransaction", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "bankTransaction_id"))
-    private Set<BankTransaction> bankTransactions;
+	@JoinTable(name = "user_bankTransaction", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "bankTransaction_id"))
+	private Set<BankTransaction> bankTransactions;
 
 
 

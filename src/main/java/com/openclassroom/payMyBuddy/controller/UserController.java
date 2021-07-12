@@ -34,16 +34,8 @@ public class UserController {
 
 	@GetMapping("/login")
 	public String showLogin (Model model) {
-//		User user = userService.findUserByEmail("diane@admin.fr");
-//		user.setPassword("diane");
-//		userService.saveUser(user);
-//		User user2 = userService.findUserByEmail("email@email.fr");
-//		user2.setPassword("email");
-//		userService.saveUser(user2);
-
 		return "login";
 	}
-
 
 	@GetMapping("/registration")
 	public String showRegistration (Model model) {
@@ -58,37 +50,29 @@ public class UserController {
 		final User userExists = userService.findUserByEmail(newUser.getEmail());
 
 		if (EmailValidation.isValidEmail(newUser.getEmail())) {
-			
-		
-		
-		
-		if (userExists != null) {
-			model.addAttribute("messageError", "There is already a user registered with the email provided");
-			return "registration";
 
-		} else {
-			userService.saveUser(newUser);
-			User user = new User();
-			model.addAttribute("newUser", user);
-			model.addAttribute("messageError", "User has been registered successfully");
-		
+			if (userExists != null) {
+				model.addAttribute("messageError", "There is already a user registered with the email provided");
+				return "registration";
+
+			} else {
+				userService.saveUser(newUser);
+				User user = new User();
+				model.addAttribute("newUser", user);
+				model.addAttribute("messageError", "User has been registered successfully");
+
+				return "registration";
+			}	     
+		}else {
+			model.addAttribute("messageError", "Email address is incorrect");
 			return "registration";
-		}	     
-	}else {
-		model.addAttribute("messageError", "Email address is incorrect");
-		return "registration";
-	}
+		}
 	}
 
 	@ModelAttribute("profil")
 	public UserDto userDto() {
 		return new UserDto();
 	}
-	
-	/*
-	 * public static boolean isValidEmailAddress(String email) { boolean result =
-	 * true; try { InternetAddress emailAddr = new InternetAddress(email);
-	 * emailAddr.validate(); } catch (AddressException ex) { result = false; }
-	 * return result; }
-	 */
+
+
 }

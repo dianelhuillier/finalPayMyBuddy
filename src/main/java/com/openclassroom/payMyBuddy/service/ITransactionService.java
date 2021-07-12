@@ -21,12 +21,5 @@ public interface ITransactionService {
 	
 	Page<TransactionPayMyBuddy> findTransactionByEmailUser(String emailUser, int page, int taille);
 
-	
-
-	//List<TransactionPayMyBuddy> getAllTransactions(Integer pageNo, Integer pageSize, String sortBy);
-
-	//Page<TransactionPayMyBuddy> listAll(int pageNum);
-
-//	Page<TransactionPayMyBuddy> listTransactionsByPageBySize(int page, int taille);
 
 }

@@ -32,9 +32,9 @@ public class TransactionService implements ITransactionService{
 	public User connectingPeople(String emailUser, String emailConnection) {
 		User connectUser = userRepository.findByEmail(emailUser);
 		Connection connectedUser = connectionRepository.findByEmail(emailConnection); //search for connection object with email
-		
+
 		Set<Connection> listConnectedUsersConnection= connectUser.getConnections(); //
-		
+
 		listConnectedUsersConnection.add(connectedUser);
 		connectUser.setConnections(listConnectedUsersConnection);
 
@@ -47,10 +47,10 @@ public class TransactionService implements ITransactionService{
 
 		User senderUser = userRepository.findByEmail(transactionPayMyBuddy.getEmailUser()); //on créee un user
 		User receiveUser = userRepository.findByEmail(transactionPayMyBuddy.getEmailConnection()); //on recupere le partenaire
-		
-		
+
+
 		User adminUser = userRepository.findByEmail("diane@admin.fr");//on appelle le compte admin ET on le trouve
-		
+
 		double soldAvailable = senderUser.getSold();
 		double soldUp = receiveUser.getSold();
 		if (soldAvailable < transactionPayMyBuddy.getAmount()) {
@@ -60,31 +60,31 @@ public class TransactionService implements ITransactionService{
 
 			double soldLeft = soldAvailable - transactionPayMyBuddy.getAmount();
 			senderUser.setSold(soldLeft);     
-			
+
 			double soldPresent = transactionPayMyBuddy.getAmount();
-					
+
 			double soldTransition = soldPresent + soldUp; 
-			
+
 			double prelevement = transactionPayMyBuddy.getAmount() *5/1000;		
-			
+
 			soldUp = soldTransition-prelevement;  		
-			
+
 			double lionPart = soldTransition-soldUp;
 			double actualSoldAdmin = adminUser.getSold();
 			double finalSoldAdmin = lionPart+actualSoldAdmin;
 			adminUser.setSold(finalSoldAdmin);
-			
+
 			receiveUser.setSold(soldUp);
 
 			//on save les new users
 			userRepository.save(senderUser);
 			userRepository.save(receiveUser);
 			transactionRepository.save(transactionPayMyBuddy);
-		return 1;	
+			return 1;	
 		}
 	}
 
-	
+
 	@Override
 	public Page<TransactionPayMyBuddy> findTransactionByEmailUser(String emailUser, int page, int taille) {
 		final Pageable pageable = PageRequest.of(page, taille, Sort.by(Sort.Direction.DESC,"id"));
@@ -92,56 +92,22 @@ public class TransactionService implements ITransactionService{
 		return transactionRepository.findByEmailUser(emailUser, pageable);
 	}
 
-    public long getTransactionsCount() {
-        return transactionRepository.count();
-    }
- 
-    
-    
-    
-//    public Page<TransactionPayMyBuddy> getPaginatedTransactions(final int pageNumber, final int pageSize) {
-//        final Pageable pageable = PageRequest.of(pageNumber - 1, pageSize);
-//        return transactionRepository.findAll(pageable);
-//    }
-//
-//	@Override
-//	public List<TransactionPayMyBuddy> getAllTransactions(Integer pageNo, Integer pageSize, String sortBy) {
-//		return transactionRepository.findAll();
-//	}
+	public long getTransactionsCount() {
+		return transactionRepository.count();
+	}
 
 
-//code jaava
-    public List<TransactionPayMyBuddy> listAll() {
-        return transactionRepository.findAll();
-    } 
-	
-//    public Page<TransactionPayMyBuddy> listAll(int pageNum) {
-//        int pageSize = 5;
-//         
-//        Pageable pageable = PageRequest.of(pageNum - 1, pageSize);
-//         
-//        return transactionRepository.findAll(pageable);
-//    }
-    
-//	public  List<TransactionPayMyBuddy> getAllTransactions(Integer pageNo, Integer pageSize, String sortBy)
-//    {
-//        Pageable paging = PageRequest.of(pageNo, pageSize);
-// //, Sort.by(sortBy)
-//        Page<TransactionPayMyBuddy> pagedResult = transactionRepository.findAll(paging);
-//         
-//        if(pagedResult.hasContent()) {
-//            return pagedResult.getContent();
-//        } else {
-//            return new ArrayList<TransactionPayMyBuddy>();
-//        }
-//    }
-	
+	public List<TransactionPayMyBuddy> listAll() {
+		return transactionRepository.findAll();
+	} 
+
+
 	public Page<TransactionPayMyBuddy> listTransactionsByPageBySize(int page, int taille) {
 
 		final Pageable pageable = PageRequest.of(page, taille, Sort.by(Sort.Direction.DESC,"id"));
 
 		return transactionRepository.findAll(pageable);
 	}
-	
+
 
 }

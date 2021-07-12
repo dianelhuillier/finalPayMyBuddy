@@ -75,21 +75,12 @@ public class MessageController {
 		return "profile";
 	}
 	
-
 	
 	@GetMapping("/index")
 	public String showIndex (Model Model) {
 	return "index";
 	}
 	
-
-
-
-
-
-	
-	
-
 
     @GetMapping("/access-denied")
     public String accessDenied() {

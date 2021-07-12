@@ -24,17 +24,17 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "account_id")
 	private Long id;
-	
-    @Column(name = "iban") 
+
+	@Column(name = "iban", nullable = false, unique = true) 
 	private String iban;
-    
-    @Column(name = "email")
+
+	@Column(name = "email", nullable = false, unique = true)
 	private String email;
-    
-    @Column(name = "soldAccount")
+
+	@Column(name = "soldAccount")
 	private double soldAccount;
 
 
-	
-	
+
+
 }

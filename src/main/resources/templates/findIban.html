@@ -1,108 +1,81 @@
 <!DOCTYPE html>
-<html  xmlns:th="http://www.thymeleaf.org" lang="fr">
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
 <head>
 <link th:href="@{assets/dist/css/bootstrap.min.css}" rel="stylesheet">
 <link th:href="@{assets/dist/css/stylep.css}" rel="stylesheet">
 
-<meta charset = "UTF-8">
+<meta charset="UTF-8">
 <title>List Accounts</title>
 </head>
 <body>
-<!-- <th:block th:replace="fragment/barre.html::barre"></th:block> -->
-<th:block th:replace="fragment/menu.html::menu"></th:block>
-<br>
-<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-  <ol class="breadcrumb" >
-    <li class="breadcrumb-item active" aria-current="page">Home</li>
-  </ol>
-</nav>
-<h1 style="text-align: center;">List Accounts</h1>
+	<!-- <th:block th:replace="fragment/barre.html::barre"></th:block> -->
+	<th:block th:replace="fragment/menu.html::menu"></th:block>
+	<br>
+	<nav style="-bs-breadcrumb-divider: '&amp;gt;';"
+		aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item active" aria-current="page">Home</li>
+		</ol>
+	</nav>
+	<h1 style="text-align: center;">List Accounts</h1>
 
 
-	<form  method="POST" class="form-signin"
-			style="width: 30%; margin: auto" th:action="@{/registreiban}" th:modelAttribute="newAcccount">
+	<form method="POST" class="form-signin"
+		style="width: 30%; margin: auto" th:action="@{/registreiban}"
+		th:modelAttribute="newAcccount" action="">
 
 		<input type="text" id="iban" name="iban" th:placeholder="NewAccount"
-		class="form-control" />
-<input type="submit" value="Envoyer">
-  
-</form>
+			class="form-control" /> <input type="submit" value="Envoyer">
+
+	</form>
+
+	<p th:text="${messageError}"></p>
+
+	<div class="payselect">
+
+		<form th:action="@{/bankTransfer}" method="POST"
+			th:object="${account}" action="">
 
 
+			<select aria-label="Default select" id="selectaniban" name="iban"
+				th:object="${account}">
 
-<!--   <select class="form-control " th:field="*{receiver.id}"> -->
-<!--                     <option th:each="contact : ${contacts}" -->
-<!--                             th:value="${contact.id}" -->
-<!--                             th:text="${contact.email}"></option> -->
-
-
-
-		<p th:text="${messageError}"></p>
-		
+				<option th:each="account : ${listAccount}"
+					th:value="${account.iban}" th:text="${account.iban}">One</option>
+			</select> <input type="text" name="bank_description" id="bank_description">
 
 
-
-		
-<div class="payselect">
-
+			<input type="number" name="amount" min="-9000000000"
+				max="900000000000" id="buttonamount">
 
 
-
-			<form th:action="@{/registreiban}" method="POST"
-				th:object="${account}" >
+			<button name="sendBankMoney" value="approve" id="paybutton">Send></button>
 
 
-				<select aria-label="Default select" id="selectaniban"
-					name="iban">
-					
-					<option th:each="account : ${listAccount}" th:value="${account.iban}" th:text="${account.iban}" 
-						
-						>One</option>
-				</select> 
-				
-				
-				<input type="text" name="description" id="description"> 
-				
-				
-				<input type="number" name="amount" min="-9000000000" max="900000000000"
-					id="buttonamount">
+		</form>
+	</div>
 
 
-				<button name="sendBankMoney" value="approve" id="paybutton">Send></button>
+	<table class="myConnections">
+		<caption>My Accounts</caption>
+		<thead>
+			<tr>
+				<th>IBAN</th>
+				<th>Sold</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="account : ${listAccount}">
+				<td th:value="${account.iban}" th:text="${account.iban}">IBAN</td>
+				<td th:value="${account.soldAccount}"
+					th:text="${account.soldAccount}">Sold</td>
+			</tr>
 
-
-			</form>
-		</div>
-
-
-
-
-
-
-
-
-
-<table class="myConnections">
-	<caption>My Accounts</caption>
-	<thead>
-		<tr>
-			<th>IBAN</th>
-			<th>Sold</th>
-		</tr>
-	</thead>
-	<tbody>
-	<tr th:each="account : ${listAccount}">	
-		<td  th:value="${account.iban}" th:text="${account.iban}">IBAN</td>
-		<td  th:value="${account.soldAccount}" th:text="${account.soldAccount}">Sold</td>
-	</tr>
-
-
-
-	</tbody>
-</table>
+		</tbody>
+	</table>
 
 </body>
 <footer>
-<p th:text="${#dates.createNow()}"></p>
+	<p th:text="${#dates.createNow()}"></p>
 </footer>
 </html>
