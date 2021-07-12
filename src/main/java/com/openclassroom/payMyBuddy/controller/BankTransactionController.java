@@ -86,7 +86,7 @@ public class BankTransactionController {
 
 		if (accountExists == null) {
 			model.addAttribute("messageError", "The user isn't existing");
-			return "findConnection";
+			return "findIban";
 		} else {
 
 			final Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -141,11 +141,11 @@ public class BankTransactionController {
 		int echec  = iTransactionBankService.sendBankMoney(newBankTransaction);
 		if (echec == 0) {
 			messageError = "Your account isn't accredit enought";
-			return "redirect:findIban";
+			return "findIban";
 
 		} else {
 			messageError = 	"Your Transaction has been completed successfully";
-			return "redirect:findIban";
+			return "findIban";
 		}	     
 	}
 
